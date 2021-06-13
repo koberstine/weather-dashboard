@@ -106,8 +106,9 @@ function createNewList (cityName) {
                 newList.push(oldList[i]);
             }
         }
-    } 
+    }
     localStorage.setItem('cityList', JSON.stringify(newList));
+    console.log(newList)
     createButtons(newList);
 }
 
@@ -124,6 +125,7 @@ function createButtons (cityList) {
             $("#city").val(cityList[i]);
             searchForCity ();
         })
+
         buttonLocation.append(button)      
     }
 }
