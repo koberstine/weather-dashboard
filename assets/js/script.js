@@ -26,7 +26,7 @@ function displayWeather(weather, oneCall) {
     var displayHere = $("#current-weather");
     displayHere.html("");
     var actualCityName = weather.name;
-    var currentWeatherHeader = $("<h1/>");
+    var currentWeatherHeader = $("<h2/>");
     var todaysDate = new Date(weather.dt*1000);
     var parcedDate = (todaysDate.getMonth()+1) + "/" + todaysDate.getDate() + "/" + todaysDate.getFullYear();
     currentWeatherHeader.text(actualCityName + " " + parcedDate);
@@ -68,7 +68,7 @@ function displayWeather(weather, oneCall) {
         displayFiveDay.append(singleDay)
         var displayOneDay = $(singleDay)
 
-        var fiveDayDate = $("<p/>");
+        var fiveDayDate = $("<h2/>");
         var singleDayDate = new Date(oneCall.daily[i].dt*1000);
         var parcedSingleDate = (singleDayDate.getMonth()+1) + "/" + singleDayDate.getDate() + "/" + singleDayDate.getFullYear();
         fiveDayDate.text(parcedSingleDate);
@@ -123,11 +123,12 @@ function createButtons (cityList) {
         button.text(buttonLabel);
 
         button.click(function () {
-            $("#city").val(buttonLabel);
+            $("#city").val($(this).text());
             searchForCity ();
         })
 
-        buttonLocation.append(button)      
+        buttonLocation.append(button);
+        buttonLocation.append("<br>");      
     }
 }
 

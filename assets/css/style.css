@@ -8,12 +8,29 @@ header {
 
 header h1 {
   color: white;
-  font-weight: bold;
-  font-size: 42px;
   text-align: center;
   padding: 20px;
+  font-weight: bold;
+  font-size: 42px;
+}
+
+h2 {
+  font-weight: bold;
+  font-size: 36px;
 }
 
 #search-form {
-  float: left;
+  font-size: 32px;
+  float: right;
+  text-align: right;
+}
+
+button,
+input {
+  width: 300px;
+  font-size: 20px;
+}
+
+p {
+  font-size: 20px;
 }
