@@ -1,7 +1,7 @@
 // runs the 2 fetches for the city name
 
 function searchForCity () {
-    if ($("#city").val()){
+    if ($("#city").val() != ""){
         fetch("http://api.openweathermap.org/data/2.5/weather?q=" + $("#city").val() + "&units=imperial&appid=f19d4e1c772c15cfa5a0df0f4a51a3f8")
         .then (function (firstResponse) {
             return firstResponse.json()
@@ -16,6 +16,7 @@ function searchForCity () {
             })
         })
     }
+    $("#city").val("");
 }
 
 function displayWeather(weather, oneCall) {
@@ -90,9 +91,8 @@ function displayWeather(weather, oneCall) {
         fiveDayHumidity.text("Humidity: " + oneCall.daily[i].humidity + "%");
         displayOneDay.append(fiveDayHumidity);
 
-        createNewList (weather.name)
     }
-
+    createNewList (weather.name);
 }
 
 // make a new array of city names for localStorage
@@ -119,10 +119,11 @@ function createButtons (cityList) {
     buttonLocation.html("");
     for (i=0;i<cityList.length;i++) {
         var button = $("<button/>");
-        button.text(cityList[i]);
+        var buttonLabel = cityList[i];
+        button.text(buttonLabel);
 
         button.click(function () {
-            $("#city").val(cityList[i]);
+            $("#city").val(buttonLabel);
             searchForCity ();
         })
 
@@ -131,7 +132,7 @@ function createButtons (cityList) {
 }
 
 // pre-load cities if store in local storage
-
+$("#city").val("");
 if (localStorage.getItem('cityList') !== null) {
     var list =  JSON.parse(localStorage.getItem('cityList'));
     createButtons (list);
