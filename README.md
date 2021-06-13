@@ -1,4 +1,4 @@
-# weather-dashboard# Work Day Scheduler
+# Weather Dashboard
 
 ## Purpose
 A dashboard for finding the current weather and 5 day forecast for a city. Last 10 cities saved in memory with clickable buttons to pull new data.
