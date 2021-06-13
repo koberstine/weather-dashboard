@@ -31,6 +31,23 @@ input {
   font-size: 20px;
 }
 
-p {
+p,
+span {
   font-size: 20px;
+}
+
+#green {
+  background-color: green;
+}
+
+#yellow {
+  background-color: yellow;
+}
+
+#orange {
+  background-color: orange;
+}
+
+#red {
+  background-color: red;
 }

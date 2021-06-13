@@ -53,6 +53,15 @@ function displayWeather(weather, oneCall) {
     uvIndex.text("UV Index: ")
     displayHere.append(uvIndex)
     var uvIndexSpan = $("<span/>");
+    if (oneCall.current.uvi <= 2) {
+        uvIndexSpan.attr("id", "green");
+    } else if (oneCall.current.uvi <= 5) {
+        uvIndexSpan.attr("id", "yellow");
+    } else if (oneCall.current.uvi <= 7) {
+        uvIndexSpan.attr("id", "orange");
+    } else {
+        uvIndexSpan.attr("id", "red");
+    }
     uvIndexSpan.text(oneCall.current.uvi)
     displayHere.append(uvIndexSpan)
 
