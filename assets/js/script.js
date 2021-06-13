@@ -99,8 +99,8 @@ function displayWeather(weather, oneCall) {
 
 function createNewList (cityName) {
     var newList = [cityName];
-    if (localStorage.getItem('cityList')) {
-        var oldList = localStorage.getItem(JSON.parse('cityList'));
+    if (localStorage.getItem('cityList') !== null) {
+        var oldList =  JSON.parse(localStorage.getItem('cityList'));
         for (i=0;i<oldList.length;i++) {
             if (oldList[i] != cityName && newList.length < 10) {
                 newList.push(oldList[i]);
@@ -119,19 +119,19 @@ function createButtons (cityList) {
     for (i=0;i<cityList.length;i++) {
         var button = $("<button/>");
         button.text(cityList[i]);
+
         button.click(function () {
             $("#city").val(cityList[i]);
             searchForCity ();
         })
-
         buttonLocation.append(button)      
     }
 }
 
 // pre-load cities if store in local storage
 
-if (localStorage.getItem('cityList')) {
-    var list =  localStorage.getItem(JSON.parse('cityList'));
+if (localStorage.getItem('cityList') !== null) {
+    var list =  JSON.parse(localStorage.getItem('cityList'));
     createButtons (list);
 }
 
