@@ -2,7 +2,7 @@
 
 function searchForCity () {
     if ($("#city").val() != ""){
-        fetch("http://api.openweathermap.org/data/2.5/weather?q=" + $("#city").val() + "&units=imperial&appid=f19d4e1c772c15cfa5a0df0f4a51a3f8")
+        fetch("https://api.openweathermap.org/data/2.5/weather?q=" + $("#city").val() + "&units=imperial&appid=f19d4e1c772c15cfa5a0df0f4a51a3f8")
         .then (function (firstResponse) {
             return firstResponse.json()
         })
