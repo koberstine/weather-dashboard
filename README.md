@@ -10,7 +10,7 @@ JavaScript, jQuery
 https://koberstine.github.io/weather-dashboard/
 
 ## Screenshot
-![](https://github.com/koberstine/work-day-scheduler/blob/main/screenshot.jpg)
+![](https://github.com/koberstine/weather-dashboard/blob/main/screenshot.jpg)
 
 ## Contribution
 Made with ❤️ by [Chris Koberstine]
