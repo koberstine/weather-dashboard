@@ -8,7 +8,7 @@ A dashboard for finding the current weather and 5 day forecast for a city. Last 
 
 ## Table of Contents
 
-- [Credits](credits)
+- [Credits](#credits)
 - [Deployed-App](#deployed-app)
 - [Screenshot](#screenshot)
 - [License](#license)
